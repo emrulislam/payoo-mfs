@@ -16,6 +16,10 @@ document
       alert("Enter Valid account number");
       return;
     }
+    if (isNaN(addAmount) || addAmount <= 0) {
+      alert("Enter a valid amount to add");
+      return;
+    }
     if (PinNumber !== validPin) {
       alert("enter 4 digit valid pin");
       return;
@@ -23,4 +27,7 @@ document
     const totalNewAvailableBalance = availableBalance + addAmount;
     document.getElementById("available-balance").innerText =
       totalNewAvailableBalance;
+    alert(
+      `Successfully added ${addAmount}. New balance: ${totalNewAvailableBalance}`
+    );
   });

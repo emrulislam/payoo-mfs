@@ -1,4 +1,5 @@
 const validPin = 1234;
+// add money features
 document
   .getElementById("add-money-btn")
   .addEventListener("click", function (e) {
@@ -12,7 +13,7 @@ document
     const availableBalance = parseInt(
       document.getElementById("available-balance").innerText
     );
-    if (bankAccountNumber.length < 11) {
+    if (bankAccountNumber.length !== 11) {
       alert("Enter Valid account number");
       return;
     }
@@ -32,11 +33,51 @@ document
     );
   });
 
-  document.getElementById("add-money-button").addEventListener("click",function(){
-    document.getElementById("cash-out-parent").style.display="none";
-    document.getElementById("add-money-parent").style.display="block";
-  })
-  document.getElementById("cash-out-button").addEventListener("click",function(){
-    document.getElementById("add-money-parent").style.display="none";
-    document.getElementById("cash-out-parent").style.display="block";
-  })
+// CashOut Features
+
+document
+  .getElementById("withdraw-money-btn")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const withdrawAmount = parseInt(
+      document.getElementById("cash-out-amount").value
+    );
+    const availableBalance = parseInt(
+      document.getElementById("available-balance").innerText
+    );
+    const pinNumber = parseInt(document.getElementById("cash-out-pin").value);
+    const agentAccountNumber = document.getElementById("agent-number").value;
+    if (agentAccountNumber.length !== 11) {
+      alert("Enter valid 11 digit agent number");
+      return;
+    }
+    if (isNaN(withdrawAmount) || withdrawAmount <= 0) {
+      alert("Enter a valid amount to withdraw");
+      return;
+    }
+    if (pinNumber !== validPin) {
+      alert("enter 4 digit valid pin");
+      return;
+    }
+    const totalNewAvailableBalance = availableBalance - withdrawAmount;
+    document.getElementById("available-balance").innerText =
+      totalNewAvailableBalance;
+    alert(
+      `Successfully withdrawed ${withdrawAmount}. New balance: ${totalNewAvailableBalance}`
+    );
+  });
+
+// toggling features
+document
+  .getElementById("add-money-button")
+  .addEventListener("click", function () {
+    document.getElementById("cash-out-parent").style.display = "none";
+    document.getElementById("add-money-parent").style.display = "block";
+  });
+document
+  .getElementById("cash-out-button")
+  .addEventListener("click", function () {
+    document.getElementById("add-money-parent").style.display = "none";
+    document.getElementById("cash-out-parent").style.display = "block";
+  });

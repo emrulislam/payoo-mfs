@@ -68,16 +68,60 @@ document
     );
   });
 
+// Transfer Money Features
+
+document
+  .getElementById("transfer-money-btn")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const transferAmount = parseInt(
+      document.getElementById("transfer-amount").value
+    );
+    const availableBalance = parseInt(
+      document.getElementById("available-balance").innerText
+    );
+    const transferPin = parseInt(document.getElementById("transfer-pin").value);
+    const userAccountNumber = document.getElementById("user-account-number").value;
+    if (userAccountNumber.length !== 11) {
+      alert("Enter valid 11 digit user account number");
+      return;
+    }
+    if (isNaN(transferAmount) || transferAmount <= 0) {
+      alert("Enter a valid amount to transfer");
+      return;
+    }
+    if (transferPin !== validPin) {
+      alert("enter 4 digit valid pin");
+      return;
+    }
+    const totalNewAvailableBalance = availableBalance - transferAmount;
+    document.getElementById("available-balance").innerText =
+      totalNewAvailableBalance;
+    alert(
+      `Successfully transferred ${transferAmount}. New balance: ${totalNewAvailableBalance}`
+    );
+  });
+
 // toggling features
+
 document
   .getElementById("add-money-button")
   .addEventListener("click", function () {
     document.getElementById("cash-out-parent").style.display = "none";
+    document.getElementById("transfer-money-parent").style.display="none"
     document.getElementById("add-money-parent").style.display = "block";
   });
 document
   .getElementById("cash-out-button")
   .addEventListener("click", function () {
     document.getElementById("add-money-parent").style.display = "none";
+    document.getElementById("transfer-money-parent").style.display="none"
     document.getElementById("cash-out-parent").style.display = "block";
   });
+document.getElementById("transfer-money-button").addEventListener("click",function(){
+  document.getElementById("add-money-parent").style.display = "none";
+  document.getElementById("cash-out-parent").style.display = "none";
+  document.getElementById("transfer-money-parent").style.display="block"
+
+})

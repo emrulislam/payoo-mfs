@@ -1,4 +1,5 @@
 const validPin = 1234;
+const validCoupon ="PAYOO";
 
 // Reuseable function to get input field value
 
@@ -147,9 +148,51 @@ document
   });
 
 // Get Bonus Features
-
+document.getElementById("get-bonus-btn").addEventListener("click",function(e){
+  e.preventDefault();
+  const promoCode = getInputValue("user-coupon-number")
+  if(promoCode === validCoupon){
+    alert("Successfully redeemed your coupon")
+  }
+  else{
+    alert("Enter Correct coupon.Coupons are case sensitive")
+  }
+})
 // Pay Bill Features
+document
+  .getElementById("payment-money-btn")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
 
+    const billerAccountNumber = getInputValue("biller-account-number");
+    const paymentAmount = getInputValueNumber("payment-amount");
+    const availableBalance = getInput("available-balance");
+    const paymentPin = getInputValueNumber("payment-pin");
+
+    if (billerAccountNumber.length !== 11 || isNaN(billerAccountNumber)) {
+      alert("Enter valid 11 digit biller account number");
+      return;
+    }
+    if (isNaN(paymentAmount) || paymentAmount <= 0) {
+      alert("Enter a valid amount to transfer");
+      return;
+    }
+    if (paymentPin !== validPin) {
+      alert("Enter 4 digit valid pin");
+      return;
+    }
+    if (paymentAmount > availableBalance) {
+      alert("Insufficient balance");
+      return;
+    }
+
+    const totalNewAvailableBalance = availableBalance - paymentAmount;
+    setAvailableBalance(totalNewAvailableBalance);
+
+    alert(
+      `Successfully paid ${paymentAmount}. New balance: ${totalNewAvailableBalance}`
+    );
+  });
 // Transaction Histories features
 
 // toggling features
@@ -172,7 +215,14 @@ document
     toggleHandle("transfer-money-parent");
     toggleFeatureButton("transfer-money-button");
   });
-
+  document.getElementById("get-bonus-button").addEventListener("click",function(){
+    toggleHandle("get-bonus-parent");
+    toggleFeatureButton("get-bonus-button")
+  })
+ document.getElementById("pay-bill-button").addEventListener("click",function(){
+    toggleHandle("pay-bill-parent");
+    toggleFeatureButton("pay-bill-button")
+  })
 // Log-out features
 
 document.getElementById("logout-btn").addEventListener("click", function () {

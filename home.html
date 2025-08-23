@@ -73,15 +73,15 @@
           <img src="./assets/money1.png" class="mx-auto" alt="" />
           <p class="text-center mt-2 text-[#080808b3]">Transfer Money</p>
         </div>
-        <div class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons">
+        <div class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons" id="get-bonus-button">
           <img src="./assets/bonus1.png" class="mx-auto" alt="" />
           <p class="text-center mt-2 text-[#080808b3]">Get Bonus</p>
         </div>
-        <div class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons">
+        <div class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons" id="pay-bill-button">
           <img src="./assets/purse1.png" class="mx-auto" alt="" />
           <p class="text-center mt-2 text-[#080808b3]">Pay Bill</p>
         </div>
-        <div class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons">
+        <div class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons" id="transections-button">
           <img src="./assets/transaction1.png" class="mx-auto" alt="" />
           <p class="text-center mt-2 text-[#080808b3]">Transactions</p>
         </div>
@@ -218,7 +218,77 @@
         </form>
       </div>
       <!-- Get Bonus -->
+       <div id="get-bonus-parent" class="form" style="display: none">
+        <h2 class="font-bold my-4">Get Bonus</h2>
+        <form action="" class="bg-white p-8 rounded-3xl">
+          <div class="mt-3">
+            <label for="" class="text-[16px]">Enter Bonus Coupon</label>
+            <input
+              type="text"
+              placeholder="Enter your coupon"
+              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
+              id="user-coupon-number"
+            />
+          </div>
+          <button
+            class="btn bg-[#0874F2] w-full text-white font-semibold rounded-3xl mt-3"
+            id="get-bonus-btn"
+          >
+            Get Bonus
+          </button>
+        </form>
+      </div>
       <!-- Pay Bill -->
+<div id="pay-bill-parent" class="form" style="display: none">
+        <h2 class="font-bold my-4">Pay Bill</h2>
+        <form action="" class="bg-white p-8 rounded-3xl">
+          <div>
+            <h3 class="mb-2">Select to Pay</h3>
+            <select
+              class="select bg-[#F4F5F7] rounded-3xl w-full text-gray-400"
+              id="biller-name"
+            >
+              <option>Select a Biller</option>
+              <option>Biller-1</option>
+              <option>Biller-2</option>
+              <option>Biller-3</option>
+            </select>
+          </div>
+          <div class="mt-3">
+            <label for="" class="text-[16px]">Biller Account Number</label>
+            <input
+              type="text"
+              placeholder="Enter 11 digit account number"
+              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
+              id="biller-account-number"
+            />
+          </div>
+          <div class="mt-3">
+            <label for="" class="text-[16px] mb-2">Amount to Pay</label>
+            <input
+              type="text"
+              placeholder="Add Amount to Pay"
+              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
+              id="payment-amount"
+            />
+          </div>
+          <div class="mt-3">
+            <label for="" class="text-[16px]">Pin Number</label>
+            <input
+              type="text"
+              placeholder="Enter 4 digit pin number"
+              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
+              id="payment-pin"
+            />
+          </div>
+          <button
+            class="btn bg-[#0874F2] w-full text-white font-semibold rounded-3xl mt-3"
+            id="payment-money-btn"
+          >
+            Pay Now
+          </button>
+        </form>
+      </div>
       <!-- Transaction History -->
     </div>
     <!-- Scripts -->

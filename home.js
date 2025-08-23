@@ -223,6 +223,10 @@ document
     toggleHandle("pay-bill-parent");
     toggleFeatureButton("pay-bill-button")
   })
+  document.getElementById("transactions-button").addEventListener("click",function(){
+    toggleHandle("transaction-history-parent");
+    toggleFeatureButton("transactions-button")
+  })
 // Log-out features
 
 document.getElementById("logout-btn").addEventListener("click", function () {

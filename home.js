@@ -15,7 +15,7 @@ function getInput(id) {
   return parseInt(document.getElementById(id).innerText);
 }
 
-// reuseable function to get inner text
+// reuseable function to set inner text
 
 function setAvailableBalance(newBalance) {
   document.getElementById("available-balance").innerText = newBalance;
@@ -23,12 +23,24 @@ function setAvailableBalance(newBalance) {
 
 // reuseable function to toggle handle
 
-function toggleHandle(id){
-  const forms = document.getElementsByClassName("form")
-  for(const form of forms){
-    form.style.display="none"
+function toggleHandle(id) {
+  const forms = document.getElementsByClassName("form");
+  for (const form of forms) {
+    form.style.display = "none";
   }
-  document.getElementById(id).style.display="block"
+  document.getElementById(id).style.display = "block";
+}
+
+// Reuseable function to toggle feature buttons active status
+
+function toggleFeatureButton(id) {
+  const featureButtons = document.getElementsByClassName("feature-buttons");
+  for (const featureButton of featureButtons) {
+    featureButton.classList.remove("border-[#0874F2]");
+    featureButton.classList.add("border-[#0808081a]");
+  }
+  document.getElementById(id).classList.remove("border-[#0808081a]");
+  document.getElementById(id).classList.add("border-[#0874F2]");
 }
 
 // add money features
@@ -135,7 +147,9 @@ document
   });
 
 // Get Bonus Features
+
 // Pay Bill Features
+
 // Transaction Histories features
 
 // toggling features
@@ -143,26 +157,20 @@ document
 document
   .getElementById("add-money-button")
   .addEventListener("click", function () {
-    // document.getElementById("cash-out-parent").style.display = "none";
-    // document.getElementById("transfer-money-parent").style.display = "none";
-    // document.getElementById("add-money-parent").style.display = "block";
-    toggleHandle("add-money-parent")
+    toggleHandle("add-money-parent");
+    toggleFeatureButton("add-money-button");
   });
 document
   .getElementById("cash-out-button")
   .addEventListener("click", function () {
-    // document.getElementById("add-money-parent").style.display = "none";
-    // document.getElementById("transfer-money-parent").style.display = "none";
-    // document.getElementById("cash-out-parent").style.display = "block";
-    toggleHandle("cash-out-parent")
+    toggleHandle("cash-out-parent");
+    toggleFeatureButton("cash-out-button");
   });
 document
   .getElementById("transfer-money-button")
   .addEventListener("click", function () {
-    // document.getElementById("add-money-parent").style.display = "none";
-    // document.getElementById("cash-out-parent").style.display = "none";
-    // document.getElementById("transfer-money-parent").style.display = "block";
-    toggleHandle("transfer-money-parent")
+    toggleHandle("transfer-money-parent");
+    toggleFeatureButton("transfer-money-button");
   });
 
 // Log-out features

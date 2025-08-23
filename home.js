@@ -1,19 +1,27 @@
 const validPin = 1234;
+
+// Reuseable function to get input field value
+
+function getInputValueNumber(id) {
+  return parseInt(document.getElementById(id).value);
+}
+function getInputValue(id) {
+  return document.getElementById(id).value;
+}
+function getInput(id) {
+  return parseInt(document.getElementById(id).innerText);
+}
 // add money features
 document
   .getElementById("add-money-btn")
   .addEventListener("click", function (e) {
     e.preventDefault();
-    const bankName = document.getElementById("bank-name").value;
-    const bankAccountNumber = document.getElementById(
-      "bank-account-number"
-    ).value;
-    const addAmount = parseInt(document.getElementById("add-amount").value);
-    const PinNumber = parseInt(document.getElementById("pin-number").value);
-    const availableBalance = parseInt(
-      document.getElementById("available-balance").innerText
-    );
-    if (bankAccountNumber.length !== 11) {
+    const bankName = getInputValue("bank-name");
+    const bankAccountNumber = getInputValue("bank-account-number");
+    const addAmount = getInputValueNumber("add-amount");
+    const PinNumber = getInputValueNumber("pin-number");
+    const availableBalance = getInput("available-balance");
+    if (bankAccountNumber.length !== 11 || isNaN(bankAccountNumber)) {
       alert("Enter Valid account number");
       return;
     }
@@ -40,15 +48,12 @@ document
   .addEventListener("click", function (e) {
     e.preventDefault();
 
-    const withdrawAmount = parseInt(
-      document.getElementById("cash-out-amount").value
-    );
-    const availableBalance = parseInt(
-      document.getElementById("available-balance").innerText
-    );
-    const pinNumber = parseInt(document.getElementById("cash-out-pin").value);
-    const agentAccountNumber = document.getElementById("agent-number").value;
-    if (agentAccountNumber.length !== 11) {
+    const agentAccountNumber = getInputValue("agent-number");
+    const withdrawAmount = getInputValueNumber("cash-out-amount");
+    const availableBalance = getInput("available-balance");
+    const pinNumber = getInputValueNumber("cash-out-pin");
+
+    if (agentAccountNumber.length !== 11 || isNaN(agentAccountNumber)) {
       alert("Enter valid 11 digit agent number");
       return;
     }
@@ -57,14 +62,20 @@ document
       return;
     }
     if (pinNumber !== validPin) {
-      alert("enter 4 digit valid pin");
+      alert("Enter 4 digit valid pin");
       return;
     }
+    if (withdrawAmount > availableBalance) {
+      alert("Insufficient balance");
+      return;
+    }
+
     const totalNewAvailableBalance = availableBalance - withdrawAmount;
     document.getElementById("available-balance").innerText =
       totalNewAvailableBalance;
+
     alert(
-      `Successfully withdrawed ${withdrawAmount}. New balance: ${totalNewAvailableBalance}`
+      `Successfully withdrew ${withdrawAmount}. New balance: ${totalNewAvailableBalance}`
     );
   });
 
@@ -75,17 +86,12 @@ document
   .addEventListener("click", function (e) {
     e.preventDefault();
 
-    const transferAmount = parseInt(
-      document.getElementById("transfer-amount").value
-    );
-    const availableBalance = parseInt(
-      document.getElementById("available-balance").innerText
-    );
-    const transferPin = parseInt(document.getElementById("transfer-pin").value);
-    const userAccountNumber = document.getElementById(
-      "user-account-number"
-    ).value;
-    if (userAccountNumber.length !== 11) {
+    const userAccountNumber = getInputValue("user-account-number");
+    const transferAmount = getInputValueNumber("transfer-amount");
+    const availableBalance = getInput("available-balance");
+    const transferPin = getInputValueNumber("transfer-pin");
+
+    if (userAccountNumber.length !== 11 || isNaN(userAccountNumber)) {
       alert("Enter valid 11 digit user account number");
       return;
     }
@@ -94,12 +100,18 @@ document
       return;
     }
     if (transferPin !== validPin) {
-      alert("enter 4 digit valid pin");
+      alert("Enter 4 digit valid pin");
       return;
     }
+    if (transferAmount > availableBalance) {
+      alert("Insufficient balance");
+      return;
+    }
+
     const totalNewAvailableBalance = availableBalance - transferAmount;
     document.getElementById("available-balance").innerText =
       totalNewAvailableBalance;
+
     alert(
       `Successfully transferred ${transferAmount}. New balance: ${totalNewAvailableBalance}`
     );

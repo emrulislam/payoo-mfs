@@ -105,6 +105,10 @@ document
     );
   });
 
+// Get Bonus Features
+// Pay Bill Features
+// Transaction Histories features
+
 // toggling features
 
 document
@@ -129,7 +133,7 @@ document
     document.getElementById("transfer-money-parent").style.display = "block";
   });
 
-// Log-out
+// Log-out features
 
 document.getElementById("logout-btn").addEventListener("click", function () {
   alert("You have been logged out!");

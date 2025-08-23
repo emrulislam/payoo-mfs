@@ -21,6 +21,16 @@ function setAvailableBalance(newBalance) {
   document.getElementById("available-balance").innerText = newBalance;
 }
 
+// reuseable function to toggle handle
+
+function toggleHandle(id){
+  const forms = document.getElementsByClassName("form")
+  for(const form of forms){
+    form.style.display="none"
+  }
+  document.getElementById(id).style.display="block"
+}
+
 // add money features
 
 document
@@ -133,23 +143,26 @@ document
 document
   .getElementById("add-money-button")
   .addEventListener("click", function () {
-    document.getElementById("cash-out-parent").style.display = "none";
-    document.getElementById("transfer-money-parent").style.display = "none";
-    document.getElementById("add-money-parent").style.display = "block";
+    // document.getElementById("cash-out-parent").style.display = "none";
+    // document.getElementById("transfer-money-parent").style.display = "none";
+    // document.getElementById("add-money-parent").style.display = "block";
+    toggleHandle("add-money-parent")
   });
 document
   .getElementById("cash-out-button")
   .addEventListener("click", function () {
-    document.getElementById("add-money-parent").style.display = "none";
-    document.getElementById("transfer-money-parent").style.display = "none";
-    document.getElementById("cash-out-parent").style.display = "block";
+    // document.getElementById("add-money-parent").style.display = "none";
+    // document.getElementById("transfer-money-parent").style.display = "none";
+    // document.getElementById("cash-out-parent").style.display = "block";
+    toggleHandle("cash-out-parent")
   });
 document
   .getElementById("transfer-money-button")
   .addEventListener("click", function () {
-    document.getElementById("add-money-parent").style.display = "none";
-    document.getElementById("cash-out-parent").style.display = "none";
-    document.getElementById("transfer-money-parent").style.display = "block";
+    // document.getElementById("add-money-parent").style.display = "none";
+    // document.getElementById("cash-out-parent").style.display = "none";
+    // document.getElementById("transfer-money-parent").style.display = "block";
+    toggleHandle("transfer-money-parent")
   });
 
 // Log-out features

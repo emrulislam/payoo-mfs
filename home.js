@@ -8,10 +8,21 @@ function getInputValueNumber(id) {
 function getInputValue(id) {
   return document.getElementById(id).value;
 }
+
+// reuseable function to get inner text
+
 function getInput(id) {
   return parseInt(document.getElementById(id).innerText);
 }
+
+// reuseable function to get inner text
+
+function setAvailableBalance(newBalance) {
+  document.getElementById("available-balance").innerText = newBalance;
+}
+
 // add money features
+
 document
   .getElementById("add-money-btn")
   .addEventListener("click", function (e) {
@@ -34,8 +45,7 @@ document
       return;
     }
     const totalNewAvailableBalance = availableBalance + addAmount;
-    document.getElementById("available-balance").innerText =
-      totalNewAvailableBalance;
+    setAvailableBalance(totalNewAvailableBalance);
     alert(
       `Successfully added ${addAmount}. New balance: ${totalNewAvailableBalance}`
     );
@@ -71,9 +81,7 @@ document
     }
 
     const totalNewAvailableBalance = availableBalance - withdrawAmount;
-    document.getElementById("available-balance").innerText =
-      totalNewAvailableBalance;
-
+    setAvailableBalance(totalNewAvailableBalance);
     alert(
       `Successfully withdrew ${withdrawAmount}. New balance: ${totalNewAvailableBalance}`
     );
@@ -109,8 +117,7 @@ document
     }
 
     const totalNewAvailableBalance = availableBalance - transferAmount;
-    document.getElementById("available-balance").innerText =
-      totalNewAvailableBalance;
+    setAvailableBalance(totalNewAvailableBalance);
 
     alert(
       `Successfully transferred ${transferAmount}. New balance: ${totalNewAvailableBalance}`

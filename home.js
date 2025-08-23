@@ -243,7 +243,7 @@ document
 
       div.innerHTML = `
       <div class="flex items-center">
-        <img src="./assets/wallet1.png" class="w-8 h-8" alt="">
+        <img src="./assets/wallet1.png" class="w-6 h-6" alt="">
         <div class="ml-3">
           <h3 class="font-medium">${data.name}</h3>
           <p class="text-[#08080880] text-sm">${data.date}</p>

@@ -82,7 +82,9 @@ document
       document.getElementById("available-balance").innerText
     );
     const transferPin = parseInt(document.getElementById("transfer-pin").value);
-    const userAccountNumber = document.getElementById("user-account-number").value;
+    const userAccountNumber = document.getElementById(
+      "user-account-number"
+    ).value;
     if (userAccountNumber.length !== 11) {
       alert("Enter valid 11 digit user account number");
       return;
@@ -109,19 +111,27 @@ document
   .getElementById("add-money-button")
   .addEventListener("click", function () {
     document.getElementById("cash-out-parent").style.display = "none";
-    document.getElementById("transfer-money-parent").style.display="none"
+    document.getElementById("transfer-money-parent").style.display = "none";
     document.getElementById("add-money-parent").style.display = "block";
   });
 document
   .getElementById("cash-out-button")
   .addEventListener("click", function () {
     document.getElementById("add-money-parent").style.display = "none";
-    document.getElementById("transfer-money-parent").style.display="none"
+    document.getElementById("transfer-money-parent").style.display = "none";
     document.getElementById("cash-out-parent").style.display = "block";
   });
-document.getElementById("transfer-money-button").addEventListener("click",function(){
-  document.getElementById("add-money-parent").style.display = "none";
-  document.getElementById("cash-out-parent").style.display = "none";
-  document.getElementById("transfer-money-parent").style.display="block"
+document
+  .getElementById("transfer-money-button")
+  .addEventListener("click", function () {
+    document.getElementById("add-money-parent").style.display = "none";
+    document.getElementById("cash-out-parent").style.display = "none";
+    document.getElementById("transfer-money-parent").style.display = "block";
+  });
 
-})
+// Log-out
+
+document.getElementById("logout-btn").addEventListener("click", function () {
+  alert("You have been logged out!");
+  window.location.href = "./index.html";
+});

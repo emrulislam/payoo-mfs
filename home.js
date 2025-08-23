@@ -1,5 +1,6 @@
 const validPin = 1234;
 const validCoupon = "PAYOO";
+const transactionData = [];
 
 // Reuseable function to get input field value
 
@@ -72,6 +73,11 @@ document
     alert(
       `Successfully added ${addAmount}. New balance: ${totalNewAvailableBalance}`
     );
+    const data = {
+      name: "Add Money",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionData.push(data);
   });
 
 // CashOut Features
@@ -108,6 +114,11 @@ document
     alert(
       `Successfully withdrew ${withdrawAmount}. New balance: ${totalNewAvailableBalance}`
     );
+    const data = {
+      name: "Cash Out",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionData.push(data);
   });
 
 // Transfer Money Features
@@ -145,6 +156,11 @@ document
     alert(
       `Successfully transferred ${transferAmount}. New balance: ${totalNewAvailableBalance}`
     );
+    const data = {
+      name: "Transfer Money",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionData.push(data);
   });
 
 // Get Bonus Features
@@ -193,8 +209,54 @@ document
     alert(
       `Successfully paid ${paymentAmount}. New balance: ${totalNewAvailableBalance}`
     );
+    const data = {
+      name: "Payment",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionData.push(data);
   });
+
 // Transaction Histories features
+document
+  .getElementById("transactions-button")
+  .addEventListener("click", function () {
+    const transactionContainer = document.getElementById(
+      "transaction-container"
+    );
+
+    // make container vertical so each transaction sits in one row
+    transactionContainer.className = "flex flex-col gap-2";
+    transactionContainer.innerHTML = ""; // clear old data
+
+    for (const data of transactionData) {
+      const div = document.createElement("div");
+      div.classList.add(
+        "flex",
+        "justify-between",
+        "items-center",
+        "bg-white",
+        "p-3",
+        "rounded-lg",
+        "shadow-sm",
+        "w-full"
+      );
+
+      div.innerHTML = `
+      <div class="flex items-center">
+        <img src="./assets/wallet1.png" class="w-8 h-8" alt="">
+        <div class="ml-3">
+          <h3 class="font-medium">${data.name}</h3>
+          <p class="text-[#08080880] text-sm">${data.date}</p>
+        </div>
+      </div>
+      <div>
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+      </div>
+    `;
+
+      transactionContainer.appendChild(div);
+    }
+  });
 
 // toggling features
 

@@ -12,7 +12,7 @@
     />
     <!-- Tailwind CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Fontawesome CDN -->
+    <!-- Font awesome CDN -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
@@ -22,6 +22,8 @@
     />
   </head>
   <body class="bg-[#F4F5F7] min-h-screen">
+    <!-- Nav Bar Starts Here -->
+
     <div class="max-w-lg mx-auto bg-white rounded-b-3xl">
       <div
         class="min-h-[50px] flex justify-between items-center border-b-1 border-gray-400 p-3"
@@ -44,6 +46,9 @@
           </button>
         </div>
       </div>
+      <!-- Nav Bar Ends Here -->
+
+      <!-- Feature Card Section Description Starts Here -->
       <div class="mt-8 p-3">
         <h2 class="text-2xl font-bold">🔥 Welcome to Payooo!</h2>
         <p class="text-[#08080880] mt-3">
@@ -51,7 +56,11 @@
           is low and
         </p>
       </div>
+      <!-- Feature Card Section Description Ends Here -->
+
+      <!-- Feature Card Section Gallery starts here-->
       <div class="mt-8 grid grid-cols-3 gap-4 p-3">
+        <!-- add money feature button -->
         <div
           class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons"
           id="add-money-button"
@@ -59,6 +68,7 @@
           <img src="./assets/wallet1.png" class="mx-auto" alt="" />
           <p class="text-center mt-2 text-[#080808b3]">Add Money</p>
         </div>
+        <!-- cash out feature button -->
         <div
           class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons"
           id="cash-out-button"
@@ -66,6 +76,7 @@
           <img src="./assets/send1.png" class="mx-auto" alt="" />
           <p class="text-center mt-2 text-[#080808b3]">Cashout</p>
         </div>
+        <!-- transfer money feature button -->
         <div
           class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons"
           id="transfer-money-button"
@@ -73,6 +84,7 @@
           <img src="./assets/money1.png" class="mx-auto" alt="" />
           <p class="text-center mt-2 text-[#080808b3]">Transfer Money</p>
         </div>
+        <!-- get bonus feature button -->
         <div
           class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons"
           id="get-bonus-button"
@@ -80,6 +92,7 @@
           <img src="./assets/bonus1.png" class="mx-auto" alt="" />
           <p class="text-center mt-2 text-[#080808b3]">Get Bonus</p>
         </div>
+        <!-- pay bill feature button -->
         <div
           class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons"
           id="pay-bill-button"
@@ -87,6 +100,7 @@
           <img src="./assets/purse1.png" class="mx-auto" alt="" />
           <p class="text-center mt-2 text-[#080808b3]">Pay Bill</p>
         </div>
+        <!-- transactions history feature button -->
         <div
           class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons"
           id="transactions-button"
@@ -96,8 +110,14 @@
         </div>
       </div>
     </div>
+
+    <!-- Feature Card Section  Gallery Ends here-->
+
+    <!-- Item wise feature sections design starts here -->
+
     <div class="all-form-sections max-w-lg mx-auto">
-      <!-- add money -->
+      <!-- add money section design -->
+
       <div id="add-money-parent" class="form" style="display: block">
         <h2 class="font-bold my-4">Add Money</h2>
         <form action="" class="bg-white p-8 rounded-3xl">
@@ -148,7 +168,9 @@
           </button>
         </form>
       </div>
-      <!-- Cash Out -->
+
+      <!-- Cash Out section design -->
+
       <div id="cash-out-parent" class="form" style="display: none">
         <h2 class="font-bold my-4">Cash Out</h2>
         <form action="" class="bg-white p-8 rounded-3xl">
@@ -187,7 +209,9 @@
           </button>
         </form>
       </div>
-      <!-- Transfer Money -->
+
+      <!-- Transfer Money section design -->
+
       <div id="transfer-money-parent" class="form" style="display: none">
         <h2 class="font-bold my-4">Transfer Money</h2>
         <form action="" class="bg-white p-8 rounded-3xl">
@@ -226,7 +250,9 @@
           </button>
         </form>
       </div>
-      <!-- Get Bonus -->
+
+      <!-- Get Bonus section design -->
+
       <div id="get-bonus-parent" class="form" style="display: none">
         <h2 class="font-bold my-4">Get Bonus</h2>
         <form action="" class="bg-white p-8 rounded-3xl">
@@ -247,7 +273,9 @@
           </button>
         </form>
       </div>
-      <!-- Pay Bill -->
+
+      <!-- Pay Bill section design -->
+
       <div id="pay-bill-parent" class="form" style="display: none">
         <h2 class="font-bold my-4">Pay Bill</h2>
         <form action="" class="bg-white p-8 rounded-3xl">
@@ -298,14 +326,20 @@
           </button>
         </form>
       </div>
-      <!-- Transaction History -->
+
+      <!-- Transaction History section design -->
+
       <div id="transaction-history-parent" class="form" style="display: none">
         <div class="flex justify-between items-center">
           <h2 class="font-bold my-4">Transaction History</h2>
           <p class="text-[#08080880]">View All</p>
         </div>
       </div>
+
+      <!-- individual section design ends here -->
     </div>
+    <!-- Item wise feature sections design Ends here -->
+
     <!-- Scripts -->
     <script src="./home.js"></script>
   </body>

@@ -38,13 +38,17 @@ function toggleHandle(id) {
 function toggleFeatureButton(id) {
   const featureButtons = document.getElementsByClassName("feature-buttons");
   for (const featureButton of featureButtons) {
-    featureButton.classList.remove("border-[#0874F2]");
-    featureButton.classList.add("border-[#0808081a]");
+    featureButton.classList.remove(
+      "border-blue-500",
+      "bg-blue-50",
+      "shadow-lg"
+    );
+    featureButton.classList.add("border-[#0808081a]", "bg-white", "shadow-md");
   }
-  document.getElementById(id).classList.remove("border-[#0808081a]");
-  document.getElementById(id).classList.add("border-[#0874F2]");
+  const activeButton = document.getElementById(id);
+  activeButton.classList.remove("border-[#0808081a]", "bg-white", "shadow-md");
+  activeButton.classList.add("border-blue-500", "bg-blue-200", "shadow-lg");
 }
-
 // add money features
 
 document

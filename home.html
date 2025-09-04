@@ -24,9 +24,9 @@
   <body class="bg-[#F4F5F7] min-h-screen">
     <!-- Nav Bar Starts Here -->
 
-    <div class="max-w-lg mx-auto bg-white rounded-b-3xl">
+    <div class="w-full max-w-lg mx-auto bg-white rounded-b-3xl">
       <div
-        class="min-h-[50px] flex justify-between items-center border-b-1 border-gray-400 p-3"
+         class="flex justify-between items-center border-b border-gray-200 p-4 bg-white shadow-sm rounded-t-3xl"
       >
         <div class="flex justify-center items-center">
           <img src="./assets/Group.png" class="h-[50px]" alt="" />
@@ -59,10 +59,10 @@
       <!-- Feature Card Section Description Ends Here -->
 
       <!-- Feature Card Section Gallery starts here-->
-      <div class="mt-8 grid grid-cols-3 gap-4 p-3">
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-6 p-3 pb-12">
         <!-- add money feature button -->
         <div
-          class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons"
+          class="bg-white px-5 py-3 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 feature-buttons"
           id="add-money-button"
         >
           <img src="./assets/wallet1.png" class="mx-auto" alt="" />
@@ -70,7 +70,7 @@
         </div>
         <!-- cash out feature button -->
         <div
-          class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons"
+          class="bg-white px-5 py-3 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 feature-buttons"
           id="cash-out-button"
         >
           <img src="./assets/send1.png" class="mx-auto" alt="" />
@@ -78,7 +78,7 @@
         </div>
         <!-- transfer money feature button -->
         <div
-          class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons"
+          class="bg-white px-5 py-3 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 feature-buttons"
           id="transfer-money-button"
         >
           <img src="./assets/money1.png" class="mx-auto" alt="" />
@@ -86,7 +86,7 @@
         </div>
         <!-- get bonus feature button -->
         <div
-          class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons"
+          class="bg-white px-5 py-3 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 feature-buttons"
           id="get-bonus-button"
         >
           <img src="./assets/bonus1.png" class="mx-auto" alt="" />
@@ -94,7 +94,7 @@
         </div>
         <!-- pay bill feature button -->
         <div
-          class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons"
+          class="bg-white px-5 py-3 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 feature-buttons"
           id="pay-bill-button"
         >
           <img src="./assets/purse1.png" class="mx-auto" alt="" />
@@ -102,7 +102,7 @@
         </div>
         <!-- transactions history feature button -->
         <div
-          class="bg-white px-5 py-3 rounded-xl border-1 border-[#0808081a] feature-buttons"
+          class="bg-white px-5 py-3 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 feature-buttons"
           id="transactions-button"
         >
           <img src="./assets/transaction1.png" class="mx-auto" alt="" />
@@ -114,244 +114,141 @@
     <!-- Feature Card Section  Gallery Ends here-->
 
     <!-- Item wise feature sections design starts here -->
+<div class="all-form-sections w-full max-w-lg mx-auto px-3 space-y-6 mt-12">
 
-    <div class="all-form-sections max-w-lg mx-auto">
-      <!-- add money section design -->
-
-      <div id="add-money-parent" class="form" style="display: block">
-        <h2 class="font-bold my-4">Add Money</h2>
-        <form action="" class="bg-white p-8 rounded-3xl">
-          <div>
-            <h3 class="mb-2">Select A Bank</h3>
-            <select
-              class="select bg-[#F4F5F7] rounded-3xl w-full text-gray-400"
-              id="bank-name"
-            >
-              <option>Select a Bank</option>
-              <option>Mutual Trust Bank</option>
-              <option>Eastern Bank Limited (EBL)</option>
-              <option>The City Bank</option>
-            </select>
-          </div>
-          <div class="mt-3">
-            <label for="" class="text-[16px]">Bank Account Number</label>
-            <input
-              type="text"
-              placeholder="Enter 11 digit account number"
-              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
-              id="bank-account-number"
-            />
-          </div>
-          <div class="mt-3">
-            <label for="" class="text-[16px] mb-2">Amount to Add</label>
-            <input
-              type="text"
-              placeholder="Add Amount to withdraw"
-              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
-              id="add-amount"
-            />
-          </div>
-          <div class="mt-3">
-            <label for="" class="text-[16px]">Pin Number</label>
-            <input
-              type="text"
-              placeholder="Enter 4 digit pin number"
-              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
-              id="pin-number"
-            />
-          </div>
-          <button
-            class="btn bg-[#0874F2] w-full text-white font-semibold rounded-3xl mt-3"
-            id="add-money-btn"
-          >
-            Add Money
-          </button>
-        </form>
+  <!-- Add Money Section -->
+  <div id="add-money-parent" class="form bg-white p-6 rounded-3xl shadow-lg transform scale-105 transition-all duration-300" style="display: block">
+    <h2 class="font-bold text-xl mb-4">Add Money</h2>
+    <form action="" class="space-y-4">
+      <div>
+        <h3 class="mb-2">Select A Bank</h3>
+        <select class="select bg-[#F4F5F7] rounded-[20px] w-full text-gray-400 px-4 py-3 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="bank-name">
+          <option>Select a Bank</option>
+          <option>Mutual Trust Bank</option>
+          <option>Eastern Bank Limited (EBL)</option>
+          <option>The City Bank</option>
+        </select>
       </div>
-
-      <!-- Cash Out section design -->
-
-      <div id="cash-out-parent" class="form" style="display: none">
-        <h2 class="font-bold my-4">Cash Out</h2>
-        <form action="" class="bg-white p-8 rounded-3xl">
-          <div class="mt-3">
-            <label for="" class="text-[16px]">Agent Number</label>
-            <input
-              type="text"
-              placeholder="Enter 11 digit number"
-              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
-              id="agent-number"
-            />
-          </div>
-          <div class="mt-3">
-            <label for="" class="text-[16px] mb-2">Amount</label>
-            <input
-              type="text"
-              placeholder="Enter Amount to withdraw"
-              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
-              id="cash-out-amount"
-            />
-          </div>
-          <div class="mt-3">
-            <label for="" class="text-[16px]">Pin Number</label>
-            <input
-              type="text"
-              placeholder="Enter 4 digit pin number"
-              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
-              id="cash-out-pin"
-            />
-          </div>
-          <button
-            class="btn bg-[#0874F2] w-full text-white font-semibold rounded-3xl mt-3"
-            id="withdraw-money-btn"
-          >
-            Withdraw Money
-          </button>
-        </form>
+      <div>
+        <label class="text-[16px] mb-1">Bank Account Number</label>
+        <input type="text" placeholder="Enter 11 digit account number" class="input bg-[#F4F5F7] rounded-[20px] w-full px-4 py-3 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="bank-account-number"/>
       </div>
-
-      <!-- Transfer Money section design -->
-
-      <div id="transfer-money-parent" class="form" style="display: none">
-        <h2 class="font-bold my-4">Transfer Money</h2>
-        <form action="" class="bg-white p-8 rounded-3xl">
-          <div class="mt-3">
-            <label for="" class="text-[16px]">User Account Number</label>
-            <input
-              type="text"
-              placeholder="Enter 11 digit number"
-              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
-              id="user-account-number"
-            />
-          </div>
-          <div class="mt-3">
-            <label for="" class="text-[16px] mb-2">Amount</label>
-            <input
-              type="text"
-              placeholder="Enter Amount to Transfer"
-              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
-              id="transfer-amount"
-            />
-          </div>
-          <div class="mt-3">
-            <label for="" class="text-[16px]">Pin Number</label>
-            <input
-              type="text"
-              placeholder="Enter 4 digit pin number"
-              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
-              id="transfer-pin"
-            />
-          </div>
-          <button
-            class="btn bg-[#0874F2] w-full text-white font-semibold rounded-3xl mt-3"
-            id="transfer-money-btn"
-          >
-            Send Now
-          </button>
-        </form>
+      <div>
+        <label class="text-[16px] mb-1">Amount to Add</label>
+        <input type="text" placeholder="Add Amount to withdraw" class="input bg-[#F4F5F7] rounded-[20px] w-full px-4 py-3 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="add-amount"/>
       </div>
-
-      <!-- Get Bonus section design -->
-
-      <div id="get-bonus-parent" class="form" style="display: none">
-        <h2 class="font-bold my-4">Get Bonus</h2>
-        <form action="" class="bg-white p-8 rounded-3xl">
-          <div class="mt-3">
-            <label for="" class="text-[16px]">Enter Bonus Coupon</label>
-            <input
-              type="text"
-              placeholder="Enter your coupon"
-              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
-              id="user-coupon-number"
-            />
-          </div>
-          <button
-            class="btn bg-[#0874F2] w-full text-white font-semibold rounded-3xl mt-3"
-            id="get-bonus-btn"
-          >
-            Get Bonus
-          </button>
-        </form>
+      <div>
+        <label class="text-[16px] mb-1">Pin Number</label>
+        <input type="text" placeholder="Enter 4 digit pin number" class="input bg-[#F4F5F7] rounded-[20px] w-full px-4 py-3 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="pin-number"/>
       </div>
+      <button class="btn bg-gradient-to-r from-blue-500 to-blue-700 w-full text-white font-semibold rounded-3xl mt-3 hover:from-blue-600 hover:to-blue-800 transition-all" id="add-money-btn">Add Money</button>
+    </form>
+  </div>
 
-      <!-- Pay Bill section design -->
-
-      <div id="pay-bill-parent" class="form" style="display: none">
-        <h2 class="font-bold my-4">Pay Bill</h2>
-        <form action="" class="bg-white p-8 rounded-3xl">
-          <div>
-            <h3 class="mb-2">Select to Pay</h3>
-            <select
-              class="select bg-[#F4F5F7] rounded-3xl w-full text-gray-400"
-              id="biller-name"
-            >
-              <option>Select a Biller</option>
-              <option>Biller-1</option>
-              <option>Biller-2</option>
-              <option>Biller-3</option>
-            </select>
-          </div>
-          <div class="mt-3">
-            <label for="" class="text-[16px]">Biller Account Number</label>
-            <input
-              type="text"
-              placeholder="Enter 11 digit account number"
-              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
-              id="biller-account-number"
-            />
-          </div>
-          <div class="mt-3">
-            <label for="" class="text-[16px] mb-2">Amount to Pay</label>
-            <input
-              type="text"
-              placeholder="Add Amount to Pay"
-              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
-              id="payment-amount"
-            />
-          </div>
-          <div class="mt-3">
-            <label for="" class="text-[16px]">Pin Number</label>
-            <input
-              type="text"
-              placeholder="Enter 4 digit pin number"
-              class="input bg-[#F4F5F7] rounded-3xl w-full mt-2 placeholder:text-gray-400"
-              id="payment-pin"
-            />
-          </div>
-          <button
-            class="btn bg-[#0874F2] w-full text-white font-semibold rounded-3xl mt-3"
-            id="payment-money-btn"
-          >
-            Pay Now
-          </button>
-        </form>
+  <!-- Cash Out Section -->
+  <div id="cash-out-parent" class="form bg-white p-6 rounded-3xl shadow-lg transform scale-100 transition-all duration-300" style="display: none">
+    <h2 class="font-bold text-xl mb-4">Cash Out</h2>
+    <form class="space-y-4">
+      <div>
+        <label class="text-[16px] mb-1">Agent Number</label>
+        <input type="text" placeholder="Enter 11 digit number" class="input bg-[#F4F5F7] rounded-[20px] w-full px-4 py-3 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="agent-number"/>
       </div>
-
-      <!-- Transaction History section design -->
-
-      <div id="transaction-history-parent" class="form" style="display: none">
-        <div class="flex justify-between items-center">
-          <h2 class="font-bold my-4">Transaction History</h2>
-          <p class="text-[#08080880]">View All</p>
-        </div>
-         <div id="transaction-container" class="flex justify-between items-center bg-white p-2">
-          <div class="flex justify-center items-center">
-            <div>
-              <img src="./assets/wallet1.png" alt="">
-            </div>
-            <div class="ml-3">
-              <h3>Electricity Bill</h3>
-              <p class="text-[#08080880]">Today 01:44 AM</p>
-            </div>
-          </div>
-          <div>
-            <i class="fa-solid fa-ellipsis-vertical"></i>
-          </div>
-        </div>
+      <div>
+        <label class="text-[16px] mb-1">Amount</label>
+        <input type="text" placeholder="Enter Amount to withdraw" class="input bg-[#F4F5F7] rounded-[20px] w-full px-4 py-3 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="cash-out-amount"/>
       </div>
-      <!-- individual section design ends here -->
+      <div>
+        <label class="text-[16px] mb-1">Pin Number</label>
+        <input type="text" placeholder="Enter 4 digit pin number" class="input bg-[#F4F5F7] rounded-[20px] w-full px-4 py-3 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="cash-out-pin"/>
+      </div>
+      <button class="btn bg-gradient-to-r from-blue-500 to-blue-700 w-full text-white font-semibold rounded-3xl mt-3 hover:from-blue-600 hover:to-blue-800 transition-all" id="withdraw-money-btn">Withdraw Money</button>
+    </form>
+  </div>
+
+  <!-- Transfer Money Section -->
+  <div id="transfer-money-parent" class="form bg-white p-6 rounded-3xl shadow-lg transform scale-100 transition-all duration-300" style="display: none">
+    <h2 class="font-bold text-xl mb-4">Transfer Money</h2>
+    <form class="space-y-4">
+      <div>
+        <label class="text-[16px] mb-1">User Account Number</label>
+        <input type="text" placeholder="Enter 11 digit number" class="input bg-[#F4F5F7] rounded-[20px] w-full px-4 py-3 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="user-account-number"/>
+      </div>
+      <div>
+        <label class="text-[16px] mb-1">Amount</label>
+        <input type="text" placeholder="Enter Amount to Transfer" class="input bg-[#F4F5F7] rounded-[20px] w-full px-4 py-3 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="transfer-amount"/>
+      </div>
+      <div>
+        <label class="text-[16px] mb-1">Pin Number</label>
+        <input type="text" placeholder="Enter 4 digit pin number" class="input bg-[#F4F5F7] rounded-[20px] w-full px-4 py-3 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="transfer-pin"/>
+      </div>
+      <button class="btn bg-gradient-to-r from-blue-500 to-blue-700 w-full text-white font-semibold rounded-3xl mt-3 hover:from-blue-600 hover:to-blue-800 transition-all" id="transfer-money-btn">Send Now</button>
+    </form>
+  </div>
+
+  <!-- Get Bonus Section -->
+  <div id="get-bonus-parent" class="form bg-white p-6 rounded-3xl shadow-lg transform scale-100 transition-all duration-300" style="display: none">
+    <h2 class="font-bold text-xl mb-4">Get Bonus</h2>
+    <form class="space-y-4">
+      <div>
+        <label class="text-[16px] mb-1">Enter Bonus Coupon</label>
+        <input type="text" placeholder="Enter your coupon" class="input bg-[#F4F5F7] rounded-[20px] w-full px-4 py-3 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="user-coupon-number"/>
+      </div>
+      <button class="btn bg-gradient-to-r from-blue-500 to-blue-700 w-full text-white font-semibold rounded-3xl mt-3 hover:from-blue-600 hover:to-blue-800 transition-all" id="get-bonus-btn">Get Bonus</button>
+    </form>
+  </div>
+
+  <!-- Pay Bill Section -->
+  <div id="pay-bill-parent" class="form bg-white p-6 rounded-3xl shadow-lg transform scale-100 transition-all duration-300" style="display: none">
+    <h2 class="font-bold text-xl mb-4">Pay Bill</h2>
+    <form class="space-y-4">
+      <div>
+        <h3 class="mb-2">Select to Pay</h3>
+        <select class="select bg-[#F4F5F7] rounded-[20px] w-full px-4 py-3 text-gray-400 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="biller-name">
+          <option>Select a Biller</option>
+          <option>Biller-1</option>
+          <option>Biller-2</option>
+          <option>Biller-3</option>
+        </select>
+      </div>
+      <div>
+        <label class="text-[16px] mb-1">Biller Account Number</label>
+        <input type="text" placeholder="Enter 11 digit account number" class="input bg-[#F4F5F7] rounded-[20px] w-full px-4 py-3 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="biller-account-number"/>
+      </div>
+      <div>
+        <label class="text-[16px] mb-1">Amount to Pay</label>
+        <input type="text" placeholder="Add Amount to Pay" class="input bg-[#F4F5F7] rounded-[20px] w-full px-4 py-3 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="payment-amount"/>
+      </div>
+      <div>
+        <label class="text-[16px] mb-1">Pin Number</label>
+        <input type="text" placeholder="Enter 4 digit pin number" class="input bg-[#F4F5F7] rounded-[20px] w-full px-4 py-3 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="payment-pin"/>
+      </div>
+      <button class="btn bg-gradient-to-r from-blue-500 to-blue-700 w-full text-white font-semibold rounded-3xl mt-3 hover:from-blue-600 hover:to-blue-800 transition-all" id="payment-money-btn">Pay Now</button>
+    </form>
+  </div>
+
+  <!-- Transaction History Section -->
+  <div id="transaction-history-parent" class="form bg-white p-6 rounded-3xl shadow-lg transform scale-100 transition-all duration-300" style="display: none">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="font-bold text-xl">Transaction History</h2>
+      <p class="text-[#08080880]">View All</p>
     </div>
-    <!-- Item wise feature sections design Ends here -->
+    <div id="transaction-container" class="flex justify-between items-center bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+      <div class="flex items-center">
+        <img src="./assets/wallet1.png" alt="">
+        <div class="ml-3">
+          <h3>Electricity Bill</h3>
+          <p class="text-[#08080880]">Today 01:44 AM</p>
+        </div>
+      </div>
+      <div>
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- Item wise feature sections design Ends here -->
+
 
     <!-- Scripts -->
     <script src="./home.js"></script>
